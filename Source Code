@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tip Calculator</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+        <h1>Test Tip Calculator</h1>
+        <p>by Robert Mendoza</p>
+        <p> Please enter the cost of the service and value of tip</p>
+		<div class="output"></div>
+        <input type="number" value="100">
+        <button type="button">Tip</button>
+        <input type="number" value="15" id="marker">
+	</body>
+</html>
+
+body 
+{
+	background: rgb(119,39,53);
+    background: linear-gradient(158deg, rgba(119,39,53,0.9560866582961309) 21%, rgba(0,36,23,1) 62%, rgba(14,47,111,0.9616888991924895) 90%);
+    height: 600px;
+}
+p {
+    color: blanchedalmond;
+}
+div {
+    color: khaki;
+}
+#marker{
+    font-size: 11px;
+    color: black;
+}
+
+const button = document.querySelector("button");
+const output = document.querySelector(".output");
+
+button.addEventListener("click",function(){
+    const cost = document.querySelectorAll("input");
+    let tip = (cost[0].value*cost[1].value/100).toFixed(2);
+    let temp = `<h2>Your Tip Amount Should be $${tip}</h2>`;
+    output.innerHTML = temp;
+})
+
